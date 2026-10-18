@@ -2,6 +2,18 @@
 
 A static personal website using HTML and CSS. No packages or build step.
 
+Design: Warm studio, with a large portrait beside the hero introduction. The site follows the visitor's light or dark appearance preference.
+
+Repository: <https://github.com/ostat3211/ostat3211.github.io>.
+
+## Add the portrait
+
+1. Save the approved portrait as `assets/tom-ostapchuk.jpg`. Use an image at least 1200 pixels wide, with room around the face for cropping.
+2. In `index.html`, replace the entire `.portrait-placeholder` element with `<img src="./assets/tom-ostapchuk.jpg" alt="Tom Ostapchuk" width="1200" height="1500" fetchpriority="high">`. Set the width and height to the image's actual dimensions.
+3. Keep the surrounding `.portrait-frame` and `.portrait` elements. Adjust `object-position` in `styles.css` if the crop needs to move.
+
+The placeholder makes no image request. The LinkedIn panel stays inactive until the exact profile URL is supplied.
+
 ## Preview locally
 
 Open `index.html` in a browser, or run this command from the project folder:
@@ -33,16 +45,16 @@ Future pushes to `main` publish automatically. No custom GitHub Actions workflow
 
 GitHub Free requires a public repository for Pages. See [GitHub's setup guide](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-## Connect tomostapchuk.com when ready
+## Custom domain
 
-The domain is not configured by this scaffold. First get the GitHub Pages URL working.
+The repository's `CNAME` file already sets `tomostapchuk.com` as the custom domain. Keep this file in future commits. DNS is managed at the domain's DNS provider; GitHub provisions the HTTPS certificate once DNS checks pass.
 
 1. Verify domain ownership in GitHub's account settings.
 2. Add `tomostapchuk.com` under the repository's **Settings > Pages > Custom domain**.
 3. Follow [GitHub's current DNS instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) at the existing DNS provider. Preserve existing email records.
 4. Enable **Enforce HTTPS** once the certificate is available.
 
-GitHub creates the `CNAME` file when the custom domain is saved for branch publishing. Pull that change into the local repository before making further changes.
+GitHub creates or updates `CNAME` when the custom domain is saved for branch publishing. Pull that change into the local repository before making further changes.
 
 ## Before the full launch
 
